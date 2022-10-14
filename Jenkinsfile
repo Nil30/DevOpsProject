@@ -14,5 +14,11 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('Deploy') {
+            steps {
+                echo 'Sonar Analysing'
+                sh 'mvn sonar:sonar -Dsonar.host.url=http://3.111.245.205:9000 -Dsonar.login=b7d69f5f2c5351a6f9f84c3c527349510f34d190'
+            }
+        }
     }
 }
