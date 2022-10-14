@@ -29,9 +29,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying App on Tomcat Server'
-                sh 'cd /opt/apache-tomcat-7.0.94/webapps/'
-                sh 'sudo wget --user admin --password admin123 http://3.111.245.205:8081/nexus/service/local/repositories/releases/content/com/web/cal/WebAppCal/1.3.8/WebAppCal-1.3.8.war'
-            }
+                sh 'mvn clean'
+           }
         }
     }
 }
