@@ -26,11 +26,5 @@ pipeline {
                 sh 'mvn deploy'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying App on Tomcat Server'
-                sh 'mvn clean'
-           }
-        }
     }
 }
