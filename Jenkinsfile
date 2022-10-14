@@ -14,7 +14,7 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('Deploy') {
+        stage('Sonar') {
             steps {
                 echo 'Sonar Analysing'
                 sh 'mvn sonar:sonar -Dsonar.host.url=http://3.111.245.205:9000 -Dsonar.login=b7d69f5f2c5351a6f9f84c3c527349510f34d190'
@@ -26,7 +26,7 @@ pipeline {
                 sh 'mvn deploy'
             }
         }
-        stage('Deploy') {
+        stage('Tomcat') {
             steps {
                 echo 'Tomcat'
                 sh 'cd /opt/apache-tomcat-7.0.94/webapps/'
